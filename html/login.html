@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/init.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="login">
+        <div id="login_body">
+            <div id="login_logo">
+                <img src="../img/timg.jpg" alt="" id="login_logo_l">
+                <div id="login_logo_z"> 密码登录</div>
+
+            </div>
+            <div id="login_box">
+                <div id="username">
+                    <p id="img1">
+                        
+                        <img src="../img/登录.png" alt="" id="img1-1"></p>
+                    <input type="text" name="username" placeholder="Username" id="username_box">
+                </div>
+                <div id="password">
+                        <p id="img2"><img src="../img/密码.png" alt="" id="img2-1"></p>
+                        <input type="password" name="password" placeholder="Password" id="password_box">
+                </div>
+                <input type="button" value="登录" id="btn">
+                 
+            </input>
+            </div>
+        </div>
+    </div>
+</body>
+ <script src="../js/myajax.js" charset="utf-8"></script>
+<script>
+//   if (localStorage.username){
+//       var oUsername = doeument.querySelector("input[name=username]");
+//       oUsername.innerText = localStorage.username;
+//       oUsername.style. dispaly = "";
+//     }
+//     else
+    var oUsername = document.querySelector("input[name=username]");
+    var oPassword = document.querySelector("input[name=password]");
+    var oBtn = document.querySelector("#btn");
+    oBtn.onclick=function(){
+        // oBtn.style.className = "inset";
+        myajax.post("http://h6.duchengjiu.top/shop/api_user.php",
+    {
+        status:"login",
+        username: oUsername.value,
+        password: oPassword.value
+    }, function(error,responseText){
+        var json = JSON.parse(responseText);
+        localStorage.token = json.data.token;
+        console.log(localStorage.token);
+        localStorage.username = json.data.username;
+        if (localStorage.backurl) {
+          location.href = localStorage.backurl;
+        } else {
+          location.href = '#';
+        }
+    }
+    )
+    }
+</script>
+</html>
