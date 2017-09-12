@@ -52,10 +52,12 @@
     float: right;
 }
 .head_nav > .head > .right > .shopping-cart,.use,.search{
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    height: 38px;
+    border: 2px solid #eee;
     float: right;
-    padding: 5px;
+    margin-top: -5px;
+    margin-right: 10px;
 } 
 .head_nav > .head > .right > input{
     width: 300px;
@@ -82,8 +84,8 @@
     position: absolute;
     top: 64px;
     display: none;
-    display: -webkit-flex;
-    justify-content: space-around;
+    /* display: -webkit-flex;
+    justify-content: space-around; */
 }
 .select > div{
     margin-top: 25px;
@@ -95,33 +97,16 @@
     border-radius: 10px;
 }
 .content{
-    /* position: absolute; */
     margin-top: 67px;
-    top: 68px;
     width: 100%;
-    /* height: 100%; */
     background: #ddd;
+    height: 500px;
+    /* 剩下的内容就看小伙伴你们的了     */
     
 }
-.content > .carrousel{
-    width: 1000px;
-    height: 500px;
-    background: black;
-    /* position: absolute; */
-    /* margin-top: 30px; */
-    margin: auto;
-}
-.content > .wrapper {
-    display: -webkit-flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.content > .wrapper >.goods{
-    width: 200px;
-    height: 160px;
-    background: pink;
-    margin: 30px;
-}
+
+
+
 .footer{
     overflow: hidden;
     width: 100%;

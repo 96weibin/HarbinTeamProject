@@ -3,59 +3,57 @@ function init (){
     this.addListener()
 }
 init.prototype.crearDom = function(){
-    var oHead_nav = document.createElement('div');
-    oHead_nav.className = 'head_nav'
-    document.body.appendChild(oHead_nav);
+    this.oHead_nav = document.createElement('div');
+    this.oHead_nav.className = 'head_nav'
+    document.body.appendChild(this.oHead_nav);
 
-    var oLogo = document.createElement('div');
-    oLogo.className = 'logo';
-    oHead_nav.appendChild(oLogo);
+    this.oLogo = document.createElement('div');
+    this.oLogo.className = 'logo';
+    this.oHead_nav.appendChild(this.oLogo);
+    this.oTittle = document.createElement('div');
+    this.oTittle.className = 'title';
+    this.oTittle.innerText = '聚焦与众不同的日常设计'
+    this.oHead_nav.appendChild(this.oTittle);
 
-    var oTittle = document.createElement('div');
-    oTittle.className = 'title';
-    oTittle.innerText = '聚焦与众不同的日常设计'
-    oHead_nav.appendChild(oTittle);
+    this.oHead = document.createElement('div')
+    this.oHead.className = 'head';
+    this.oHead_nav.appendChild(this.oHead);
 
-    var oHead = document.createElement('div')
-    oHead.className = 'head';
-    oHead_nav.appendChild(oHead);
+    this. oLeft = document.createElement('div');
+    this.oLeft.className = 'left';
+    this.oHead.appendChild(this.oLeft);
+    this.oList = document.createElement('div');
+    this.oList.className = 'list';
+    this.oList.innerText = '商品分类';
+    this.oLeft.appendChild(this.oList);
 
-    var oLeft = document.createElement('div');
-    oLeft.className = 'left';
-    oHead.appendChild(oLeft);
+    this.oDropdown = document.createElement('div');
+    this.oDropdown.classList = 'dropdown';
+    this.oLeft.appendChild(this.oDropdown);
 
-    var oList = document.createElement('div');
-    oList.className = 'list';
-    oList.innerText = '商品分类';
-    oLeft.appendChild(oList);
+    this.oRight = document.createElement('div');
+    this.oRight.className = 'right';
+    this.oHead.appendChild(this.oRight);
 
-    var oDropdown = document.createElement('div');
-    oDropdown.classList = 'dropdown';
-    oLeft.appendChild(oDropdown);
+    this.oShopingCart = document.createElement('div');
+    this.oShopingCart.className = 'shopping-cart';
+    this.oRight.appendChild(this.oShopingCart);
 
-    var oRight = document.createElement('div');
-    oRight.className = 'right';
-    oHead.appendChild(oRight);
+    this.oUse = document.createElement('div');
+    this.oUse.className = 'use';
+    this.oRight.appendChild(this.oUse);
 
-    var oShopingCart = document.createElement('div');
-    oShopingCart.className = 'shopping-cart';
-    oRight.appendChild(oShopingCart);
+    this.oSearch = document.createElement('div');
+    this.oSearch.className = 'search';
+    this.oRight.appendChild(this.oSearch);
 
-    var oUse = document.createElement('div');
-    oUse.className = 'use';
-    oRight.appendChild(oUse);
+    this.oInput = document.createElement('div');
+    this.oInput.className = 'input';
+    this.oRight.appendChild(this.oInput);
 
-    var oSearch = document.createElement('div');
-    oSearch.className = 'search';
-    oRight.appendChild(oSearch);
-
-    var oInput = document.createElement('div');
-    oInput.className = 'input';
-    oRight.appendChild(oInput);
-
-    var oSelect = document.createElement('div');
-    oSelect.className = 'select';
-    oHead_nav.appendChild(oSelect);
+    this.oSelect = document.createElement('div');
+    this.oSelect.className = 'select';
+    this.oHead_nav.appendChild(this.oSelect);
 
 
     // var oGoodsList = GoodsList();
@@ -64,41 +62,100 @@ init.prototype.crearDom = function(){
 
 
 
-    // var oContent = document.createElement('div');
-    // oContent.className = 'content';
-    // document.body.appendChild(oContent);
+    var oContent = document.createElement('div');
+    oContent.className = 'content';
+    document.body.appendChild(oContent);
 
 
 
-    var oFooter = document.createElement('div');
-    oFooter.className = 'footer';
-    document.body.appendChild(oFooter);
-    var oWeixin = document.createElement('div');
-    oWeixin.className = 'weixin';
-    oFooter.appendChild(oWeixin);
+    this.oFooter = document.createElement('div');
+    this.oFooter.className = 'footer';
+    document.body.appendChild(this.oFooter);
+    this.oWeixin = document.createElement('div');
+    this.oWeixin.className = 'weixin';
+    this.oFooter.appendChild(this.oWeixin);
 
-    var oBox = document.createElement('div');
-    oBox.className = 'box';
-    oFooter.appendChild(oBox);
-    var oJoin = document.createElement('a');
-    oJoin.href = '#';
-    oJoin.innerText = '加入我们';
-    var oSplit = document.createElement('span');
-    oSplit.className = 'split';
-    oBox.appendChild(oSplit);
-    var oAbout = document.createElement('a');
-    oAbout.href = '#';
-    oAbout.innerText = '关于我们';
-    oBox.appendChild(oSplit);
-    var oCopyRight = document.createElement('a');
-    oCopyRight.innerText = '版权声明';
-    oCopyRight.href = '#';
-    oBox.appendChild(oCopyRight);
-    var oP = document.createElement('p');
-    oP.innerText='Copyright © 上海尖叫互动文化传媒有限公司 2015-2017 沪ICP备14045374号';
-    oBox.appendChild(oP);
+    this.oBox = document.createElement('div');
+    this.oBox.className = 'box';
+    this.oFooter.appendChild(this.oBox);
+    this.oJoin = document.createElement('a');
+    this.oJoin.href = '#';
+    this.oJoin.innerText = '加入我们';
+    this.oSplit = document.createElement('span');
+    this.oSplit.className = 'split';
+    this.oBox.appendChild(this.oSplit);
+    this.oAbout = document.createElement('a');
+    this.oAbout.href = '#';
+    this.oAbout.innerText = '关于我们';
+    this.oBox.appendChild(this.oSplit);
+    this.oCopyRight = document.createElement('a');
+    this.oCopyRight.innerText = '版权声明';
+    this.oCopyRight.href = '#';
+    this.oBox.appendChild(this.oCopyRight);
+    this.oP = document.createElement('p');
+    this.oP.innerText='Copyright © 上海尖叫互动文化传媒有限公司 2015-2017 沪ICP备14045374号';
+    this.oBox.appendChild(this.oP);
 }
 init.prototype.addListener = function(){
-
+    this.oLogo.addEventListener('click',function(){
+        location.reload();
+    })
+    this.oLeft.addEventListener('mouseover', () => {
+        this.oSelect.style.display='block';
+        this.oDropdown.style.background='url(img/up.png)';
+    })
+    this.oSelect.addEventListener('mouseleave',() => {
+        this.oSelect.style.display = 'none';
+        this.oDropdown.style.background='url(img/icon_dropdown.png)';
+        
+    })
+    this.oShopingCart.addEventListener('click',() => {
+        location.href = 'html/shopingCart.html';
+    })
+    this.oSearch.addEventListener('click', () => {
+        location.href = 'html/seach.html'
+    })
+    this.oUse.addEventListener('click',function() {
+        location.href = 'html/use.html';
+    })
+    this.oShopingCart.addEventListener('mouseover',function() {
+        // this.className='icon_hover';
+        this.style.width = '42px';
+        this.style.height = '42px';
+        this.style.border = 'none';
+    })
+    this.oShopingCart.addEventListener('mouseleave',function() {
+        this.style.width = '38px';
+        this.style.height = '38px';
+        this.style.borderWidth = '2px';
+        this.style.borderStyle = 'solid';
+        this.style.borderColor = '#eee';
+    })
+    this.oUse.addEventListener('mouseover',function() {
+        // this.className='icon_hover';
+        this.style.width = '42px';
+        this.style.height = '42px';
+        this.style.border = 'none';
+    })
+    this.oUse.addEventListener('mouseleave',function() {
+        this.style.width = '38px';
+        this.style.height = '38px';
+        this.style.borderWidth = '2px';
+        this.style.borderStyle = 'solid';
+        this.style.borderColor = '#eee';
+    })
+    this.oSearch.addEventListener('mouseover',function() {
+        // this.className='icon_hover';
+        this.style.width = '42px';
+        this.style.height = '42px';
+        this.style.border = 'none';
+    })
+    this.oSearch.addEventListener('mouseleave',function() {
+        this.style.width = '38px';
+        this.style.height = '38px';
+        this.style.borderWidth = '2px';
+        this.style.borderStyle = 'solid';
+        this.style.borderColor = '#eee';
+    })
+    
 }
-new init();
