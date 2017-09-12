@@ -1,4 +1,4 @@
-.head-nav{
+.head_nav{
     width: 100%;
     height: 64px;
     position: relative;
@@ -6,8 +6,9 @@
     background: #eee;
     position: fixed;
     top: 0;
+    z-index: 100;
 }
-.head-nav > .logo{
+.head_nav > .logo{
     float: left;
     margin-left: 20px;
     width: 84px;
@@ -15,7 +16,7 @@
     background: url(../img/logo.jpg) no-repeat;
     background-size:  cover;
 }
-.head-nav >  .title{
+.head_nav >  .title{
     width: 200px;
     height: 24px;
     line-height: 24px;
@@ -24,7 +25,7 @@
     float: left;
     margin-left: 20px;
 }
-.head-nav > .head{
+.head_nav > .head{
     position: absolute;
     top: 24px;
     left: 140px;
@@ -33,56 +34,108 @@
     width: auto;
 }
 
-.head-nav > .head > .left > .list{
+.head_nav > .head > .left > .list{
     float: left;
     width:80px;
     height: 40px;
     line-height: 40px;
     font-weight: 700;
 }
-.head-nav > .head > .left > .dropdown{
+.head_nav > .head > .left > .dropdown{
     width: 18px;
     height: 18px;
     background: url(../img/icon_dropdown.png);
     float: left;
     margin-top: 11px;
 }
-.head-nav > .head > .right {
+.head_nav > .head > .right {
     float: right;
 }
-.head-nav > .head > .right > .shopping-cart,.use,.search{
-    width: 44px;
-    height: 44px;
+.head_nav > .head > .right > .shopping-cart,.use,.search{
+    width: 38px;
+    height: 38px;
+    border: 2px solid #eee;
     float: right;
-    padding: 5px;
+    margin-top: -5px;
+    margin-right: 10px;
+} 
+.head_nav > .head > .right > input{
+    width: 300px;
+    height: 35px;
+    border-radius: 12px;
+    outline: none;
+    text-align: center;
+    display: none;
 }
-.head-nav > .head > .right > .shopping-cart{
+.head_nav > .head > .right > .shopping-cart{
     background: url(../img/icon_cart.png) no-repeat;
 }
-.head-nav > .head > .right > .use{
+.head_nav > .head > .right > .use{
     background: url(../img/icon_user.png) no-repeat;
 }
-.head-nav > .head > .right > .search{
+.head_nav > .head > .right > .search{
     background: url(../img/icon_search.png) no-repeat;
 }
-.select{
+
+.head_nav > .select {
     width: 100%;
     height: 80px;
     background: #aaa;
     position: absolute;
     top: 64px;
     display: none;
+    /* display: -webkit-flex;
+    justify-content: space-around; */
 }
-.select > ul{
-    margin-top: 30px;
-    display: -webkit-flex;
-    justify-content: space-around;
-}
-.select > ul > li{
+.select > div{
+    margin-top: 25px;
     width: 80px;
     height: 40px;
     line-height: 40px;
     background: #fff;
     text-align: center;
     border-radius: 10px;
+}
+.content{
+    margin-top: 67px;
+    width: 100%;
+    background: #ddd;
+    height: 500px;
+    /* 剩下的内容就看小伙伴你们的了     */
+    
+}
+
+
+
+.footer{
+    overflow: hidden;
+    width: 100%;
+    height: 90px;
+    background: #555;
+}
+.footer > .weixin{
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: url(../img/jingling.png);
+    background-position-x: -44px;  
+    margin-top: 30px;
+    margin-left: 30px;  
+}
+.footer .box{
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    overflow: hidden;
+}
+.footer a{
+    color: #fff;
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 40px;
+}
+.footer p{
+    font-size: 100;
+    color: #fff;
+    font-size: 12px;
 }
