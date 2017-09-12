@@ -32,7 +32,7 @@
     var queryString = myajax._queryjson2querystring(queryJSON);
     //配置
     //http://h6.duchengjiu.top/shop/api_cat.php?a=1&b=2
-    console.log(queryString);
+    // console.log(queryString);
     xhr.open('GET', URL + "?" + queryString);
     //发送
     xhr.send(null);
@@ -47,9 +47,12 @@
     }
     //结果返回之后要做的事情
     xhr.onreadystatechange = function() {
+      
+      
       if (xhr.readyState === xhr.DONE) {
         if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
           callback && callback(null, xhr.responseText);
+        
         } else {
           callback && callback(new Error("没有要请求的文件"), undefined);
         }

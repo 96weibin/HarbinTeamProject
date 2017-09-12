@@ -27,7 +27,7 @@
                         <p id="img2"><img src="../img/密码.png" alt="" id="img2-1"></p>
                         <input type="password" name="password" placeholder="Password" id="password_box">
                 </div>
-                <input type="button" value="登录" id="btn">
+                <input type="submit" value="登录" id="btn">
                  
             </input>
             </div>
@@ -45,8 +45,16 @@
     var oUsername = document.querySelector("input[name=username]");
     var oPassword = document.querySelector("input[name=password]");
     var oBtn = document.querySelector("#btn");
+    var oLogol = document.querySelector("#login_logo_l");
+    oLogol.onclick = function(){
+        location.href="../index.html";
+    }
+    oLogol.onmouseover = function(){
+        oLogol.style.cursor = "pointer";
+    }
     oBtn.onclick=function(){
         // oBtn.style.className = "inset";
+        
         myajax.post("http://h6.duchengjiu.top/shop/api_user.php",
     {
         status:"login",
@@ -60,7 +68,7 @@
         if (localStorage.backurl) {
           location.href = localStorage.backurl;
         } else {
-          location.href = '#';
+          location.href = '../index.html';
         }
     }
     )

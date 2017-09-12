@@ -2,30 +2,31 @@
     outline: none;
     border: 0 ;
 }
-#login{
+#register{
     width: 100%;
     height: 670px;
     background: #DBD4D4;
     overflow: hidden;
 }
-#login > #login_body{
+#register> #register_body{
     width: 696px;
     height: 466px;
     margin: 80px auto;
     background: white;
 }
-#login > #login_body > #login_logo{
+#register > #register_body > #register_logo{
     width: 696px;
     height: 80px;
     background: black;
     box-shadow: 0px 1px 2px black;
+
 }
-#login > #login_body > #login_logo > #login_logo_l{
+#register> #register_body > #register_logo > #register_logo_l{
     width: 110px;
     height: 80px;
     float: left;
 }
-#login > #login_body > #login_logo > #login_logo_z{
+#register > #register_body > #register_logo > #register_logo_z{
     color: white;
     font-size: 24px;
     width: 100px;
@@ -33,12 +34,12 @@
     margin: 30px 0 50px 0;
     float: left;
     }
-#login > #login_body > #login_box{
+#register > #register_body > #register_box{
     width: 695px;
     height: 346px;
     position: relative;
 }
-#login > #login_body > #login_box > #username{
+#register> #register_body > #register_box > #username{
     width: 450px;
     height: 60px;
     border: 1px solid black;
@@ -47,21 +48,33 @@
     left: 123px;
     top: 68px;
 }
-#login > #login_body > #login_box > #username >#img1{
+#register> #register_body > #register_box > #username >#img1{
     width: 50px;
     height: 60px;
     float: left;
 }
-#login > #login_body > #login_box > #username >#img1 >#img1-1{
+#register> #register_body > #register_box > #username >#img1 >#img1-1{
     margin: 12px 10px;
 }
-#login > #login_body > #login_box > #username >#username_box{
+#register> #register_body > #register_box > #username >#username_box{
     width: 400px;
     height: 58px;
     float: left;
  
 }
-#login > #login_body > #login_box >#password{
+#register> #register_body > #register_box > #hint_username{
+    position: absolute;
+    left: 172px;
+    top:130px;
+    display: none;
+}
+#register> #register_body > #register_box > #hint_password{
+    position: absolute;
+    left: 172px;
+    top:220px;
+    display: none;
+}
+#register> #register_body > #register_box >#password{
     width: 450px;
     height: 60px;
     border: 1px solid black;
@@ -69,21 +82,21 @@
     left: 123px;
     top: 156px;
 }
-#login > #login_body > #login_box >#password>#img2{
+#register> #register_body > #register_box >#password>#img2{
     width: 50px;
     height: 60px;
     float: left;
 }
-#login > #login_body > #login_box >#password>#img2 >#img2-1{
+#register> #register_body > #register_box >#password>#img2 >#img2-1{
     margin: 12px 10px;
 }
-#login > #login_body > #login_box >#password>#password_box{
+#register> #register_body > #register_box >#password>#password_box{
     width: 400px;
     height: 58px;
     float: left;
 
 }
-#login > #login_body > #login_box >#btn{
+#register> #register_body > #register_box >#btn{
     width: 150px;
     height: 60px;
     background: #FFEE00;
