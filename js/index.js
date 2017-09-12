@@ -1,8 +1,12 @@
-function init (){
-    this.crearDom();
-    this.addListener()
+function init_head () {
+    this.crearHeadDom();
+    this.addHeadListener();
 }
-init.prototype.crearDom = function(){
+function init_footer() {
+    this.crearFooterDom();
+    this.addFooterListener();
+}
+init_head.prototype.crearHeadDom = function(){
     this.oHead_nav = document.createElement('div');
     this.oHead_nav.className = 'head_nav'
     document.body.appendChild(this.oHead_nav);
@@ -62,12 +66,15 @@ init.prototype.crearDom = function(){
 
 
 
-    var oContent = document.createElement('div');
-    oContent.className = 'content';
-    document.body.appendChild(oContent);
+    // var oContent = document.createElement('div');
+    // oContent.className = 'content';
+    // document.body.appendChild(oContent);
 
 
 
+    
+}
+init_footer.prototype.crearFooterDom = function() {
     this.oFooter = document.createElement('div');
     this.oFooter.className = 'footer';
     document.body.appendChild(this.oFooter);
@@ -96,7 +103,7 @@ init.prototype.crearDom = function(){
     this.oP.innerText='Copyright © 上海尖叫互动文化传媒有限公司 2015-2017 沪ICP备14045374号';
     this.oBox.appendChild(this.oP);
 }
-init.prototype.addListener = function(){
+init_head.prototype.addHeadListener = function(){
     this.oLogo.addEventListener('click',function(){
         location.reload();
     })
@@ -159,3 +166,4 @@ init.prototype.addListener = function(){
     })
     
 }
+init_footer.prototype.addFooterListener = function() {}
