@@ -4,13 +4,13 @@
 }
 #login{
     width: 100%;
-    height: 640px;
+    height: 670px;
     background: #DBD4D4;
     overflow: hidden;
 }
 #login > #login_body{
     width: 696px;
-    height: 426px;
+    height: 466px;
     margin: 80px auto;
     background: white;
 }
@@ -30,7 +30,7 @@
     font-size: 24px;
     width: 100px;
     height: 50px;
-    margin: 26px 0 0 50px;
+    margin: 30px 0 50px 0;
     float: left;
     }
 #login > #login_body > #login_box{
@@ -57,7 +57,7 @@
 }
 #login > #login_body > #login_box > #username >#username_box{
     width: 400px;
-    height: 60px;
+    height: 58px;
     float: left;
  
 }
@@ -79,11 +79,11 @@
 }
 #login > #login_body > #login_box >#password>#password_box{
     width: 400px;
-    height: 60px;
+    height: 58px;
     float: left;
 
 }
-#login > #login_body > #login_box >button{
+#login > #login_body > #login_box >#btn{
     width: 150px;
     height: 60px;
     background: #FFEE00;
