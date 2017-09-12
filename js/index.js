@@ -116,7 +116,7 @@ init.prototype.addListener = function(){
         location.href = 'html/seach.html'
     })
     this.oUse.addEventListener('click',function() {
-        location.href = 'html/use.html';
+        location.href = 'html/login.html';
     })
     this.oShopingCart.addEventListener('mouseover',function() {
         // this.className='icon_hover';
