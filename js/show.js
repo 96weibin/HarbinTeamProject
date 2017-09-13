@@ -27,6 +27,9 @@ Show.prototype.creatElement = function(){
     this.join = document.createElement('div');
     this.join.className = 'join';
     this.join.innerText = '加入购物车';
+    this.join.addEventListener('click',function(){
+        location.href = 'shoppingCart.html?show.js/31'
+    })
     this.content.appendChild(this.join);
 
     

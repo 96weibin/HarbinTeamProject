@@ -11,6 +11,7 @@ getGoods.prototype.createDom = function(url) {
     myajax.get(url,{},function(error, respond) {
         var json = JSON.parse(respond);
         var arr = json.data;
+        console.log(json);
         console.log(json.data[0]);
     
         for(var i = 0; i < arr.length; i++) {
