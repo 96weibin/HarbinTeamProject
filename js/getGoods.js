@@ -38,7 +38,11 @@ getGoods.prototype.createDom = function(url) {
             self.oItem.appendChild(self.goodsPic);
             self.oItem.appendChild(self.goodsName);
             self.oItem.appendChild(self.goodsPrice);
-            
+            self.oItem.setAttribute('data-goods_id',arr[i].goods_id);
+            self.oItem.addEventListener('click', function() {
+                var goods_id = this.dataset['goods_id'];            
+                location.href = 'show.html?goods_id=' + goods_id;
+            })
         }
     })
 }

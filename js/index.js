@@ -10,6 +10,8 @@ Init_head.prototype.crearHeadDom = function(){
     this.oHead_nav = document.createElement('div');
     this.oHead_nav.className = 'head_nav'
     document.body.appendChild(this.oHead_nav);
+
+    
     this.oSpace = document.createElement('div');
     this.oSpace.className = 'space';
     document.body.appendChild(this.oSpace);

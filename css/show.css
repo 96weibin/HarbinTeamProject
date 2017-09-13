@@ -1,0 +1,36 @@
+.content{
+    width: 100%;
+    background: #eee;
+    overflow: hidden;
+}
+.content > .goods {
+    width: 400px;
+    height: 400px;
+    float: left;
+    margin:30px;
+    margin-left: 140px;
+    background: pink;
+}
+.content > .goodsName {
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: 600;
+}
+.content >.goodsDesc{
+    margin-top: 50px;
+}
+.content > .goodsPrice{
+    margin-top: 200px;
+}
+.content > .join{
+    float: right;
+    margin-right: 140px;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #f40;
+    margin-top: -29px;
+    cursor: pointer;
+}
