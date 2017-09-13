@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="../img/logo.png">
-    <link rel="stylesheet" type="text/css" href="../css/init.css">
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" type="text/css" href="css/init.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Logoin</title>
 </head>
 <body>
     <div id="login">
         <div id="login_body">
             <div id="login_logo">
-                <img src="../img/timg.jpg" alt="" id="login_logo_l">
+                <img src="img/timg.jpg" alt="" id="login_logo_l">
                 <div id="login_logo_z"> 密码登录</div>
 
             </div>
@@ -22,24 +22,24 @@
                 <div id="username">
                     <p id="img1">
                         
-                        <img src="../img/登录.png" alt="" id="img1-1"></p>
+                        <img src="img/登录.png" alt="" id="img1-1"></p>
                     <input type="text" name="username" placeholder="Username" id="username_box">
                 </div>
                 <div id="hint_username"></div>
                 <div id="password">
-                        <p id="img2"><img src="../img/密码.png" alt="" id="img2-1"></p>
+                        <p id="img2"><img src="img/密码.png" alt="" id="img2-1"></p>
                         <input type="password" name="password" placeholder="Password" id="password_box">
                 </div>
                 <div id="hint_password"></div>
                 <input type="submit" value="登录" id="btn">
-                 <a href="../html/register.html" id="aa">免费注册</a>
+                 <a href="register.html" id="aa">免费注册</a>
             </input>
             </div>
         </div>
     </div>
 </body>
- <script src="../js/myajax.js" charset="utf-8"></script>
- <script src='../js/index.js'></script>
+ <script src="js/myajax.js" charset="utf-8"></script>
+ <script src='js/index.js'></script>
 <script>
 //   if (localStorage.username){
 //       var oUsername = doeument.querySelector("input[name=username]");
@@ -47,7 +47,7 @@
 //       oUsername.style. dispaly = "";
 //     }
 //    
-new init_footer();
+new Init_footer();
     var oUsername = document.querySelector("input[name=username]");
     var oPassword = document.querySelector("input[name=password]");
     var oBtn = document.querySelector("#btn");
@@ -55,7 +55,7 @@ new init_footer();
     var oHintUsername = document.querySelector("#hint_username");
     var oHintPassword = document.querySelector("#hint_password");
     oLogol.onclick = function(){
-        location.href="../index.html";
+        location.href="index.html";
     }
     oLogol.onmouseover = function(){
         oLogol.style.cursor = "pointer";
@@ -84,7 +84,7 @@ new init_footer();
             }else {
                 oHintPassword.style.display = "none";}
            if(json.code===0){
-               location.href="../index.html";
+               location.href="index.html";
            }
         // if (localStorage.backurl) {
         //   location.href = localStorage.backurl;
