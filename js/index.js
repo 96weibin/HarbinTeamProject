@@ -1,15 +1,18 @@
-function init_head () {
+function Init_head () {
     this.crearHeadDom();
     this.addHeadListener();
 }
-function init_footer() {
+function Init_footer() {
     this.crearFooterDom();
     this.addFooterListener();
 }
-init_head.prototype.crearHeadDom = function(){
+Init_head.prototype.crearHeadDom = function(){
     this.oHead_nav = document.createElement('div');
     this.oHead_nav.className = 'head_nav'
     document.body.appendChild(this.oHead_nav);
+    this.oSpace = document.createElement('div');
+    this.oSpace.className = 'space';
+    document.body.appendChild(this.oSpace);
 
     this.oLogo = document.createElement('div');
     this.oLogo.className = 'logo';
@@ -31,6 +34,24 @@ init_head.prototype.crearHeadDom = function(){
     this.oList.innerText = '商品分类';
     this.oLeft.appendChild(this.oList);
 
+    //添加selecter里的内容
+    var self = this;
+    myajax.get('http://h6.duchengjiu.top/shop/api_cat.php',{},function(error, respond){
+        var json = JSON.parse(respond);
+        var arr = json.data;
+        var cat_ids = [];        
+        for(var i = 0 ; i < arr.length; i++) {
+            self.oType = document.createElement('div');
+            self.oType.setAttribute('data-cat_id', arr[i].cat_id);
+            self.oType.innerText = arr[i].cat_name;
+            self.oType.addEventListener('click', function() {
+                var oCatId = this.dataset['cat_id'];
+                localStorage.oCatId = oCatId;
+                location.href = 'html/search.html';                
+            })
+            self.oSelect.appendChild(self.oType);
+        }
+        });
     this.oDropdown = document.createElement('div');
     this.oDropdown.classList = 'dropdown';
     this.oLeft.appendChild(this.oDropdown);
@@ -74,7 +95,7 @@ init_head.prototype.crearHeadDom = function(){
 
     
 }
-init_footer.prototype.crearFooterDom = function() {
+Init_footer.prototype.crearFooterDom = function() {
     this.oFooter = document.createElement('div');
     this.oFooter.className = 'footer';
     document.body.appendChild(this.oFooter);
@@ -88,13 +109,24 @@ init_footer.prototype.crearFooterDom = function() {
     this.oJoin = document.createElement('a');
     this.oJoin.href = '#';
     this.oJoin.innerText = '加入我们';
-    this.oSplit = document.createElement('span');
-    this.oSplit.className = 'split';
-    this.oBox.appendChild(this.oSplit);
+    this.oBox.appendChild(this.oJoin);    
+
+
+    this.oSplit1 = document.createElement('span');
+    this.oSplit1.className = 'split';
+    this.oBox.appendChild(this.oSplit1);
+
+
     this.oAbout = document.createElement('a');
     this.oAbout.href = '#';
     this.oAbout.innerText = '关于我们';
-    this.oBox.appendChild(this.oSplit);
+    this.oBox.appendChild(this.oAbout);  
+    
+    this.oSplit2 = document.createElement('span');
+    this.oSplit2.className = 'split';
+    this.oBox.appendChild(this.oSplit2);
+
+
     this.oCopyRight = document.createElement('a');
     this.oCopyRight.innerText = '版权声明';
     this.oCopyRight.href = '#';
@@ -103,19 +135,20 @@ init_footer.prototype.crearFooterDom = function() {
     this.oP.innerText='Copyright © 上海尖叫互动文化传媒有限公司 2015-2017 沪ICP备14045374号';
     this.oBox.appendChild(this.oP);
 }
-init_head.prototype.addHeadListener = function(){
+Init_head.prototype.addHeadListener = function(){
     this.oLogo.addEventListener('click',function(){
         location.reload();
     })
     this.oLeft.addEventListener('mouseover', () => {
-        this.oSelect.style.display='block';
+        this.oSelect.style.display='-webkit-flex';
         this.oDropdown.style.background='url(img/up.png)';
+        
     })
     this.oSelect.addEventListener('mouseleave',() => {
         this.oSelect.style.display = 'none';
         this.oDropdown.style.background='url(img/icon_dropdown.png)';
-        
     })
+  
     this.oShopingCart.addEventListener('click',() => {
         location.href = 'html/shopingCart.html';
     })
@@ -164,6 +197,9 @@ init_head.prototype.addHeadListener = function(){
         this.style.borderStyle = 'solid';
         this.style.borderColor = '#eee';
     })
+    // this.oType.addEventListener('click',function(){
+    //     console.log(this.dataset.cat_id);
+    // })
     
 }
-init_footer.prototype.addFooterListener = function() {}
+Init_footer.prototype.addFooterListener = function() {}
