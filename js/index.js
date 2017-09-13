@@ -77,7 +77,7 @@ Init_head.prototype.crearHeadDom = function(){
     this.oSearch.className = 'search';
     this.oRight.appendChild(this.oSearch);
 
-    this.oInput = document.createElement('div');
+    this.oInput = document.createElement('input');
     this.oInput.className = 'input';
     this.oRight.appendChild(this.oInput);
 
@@ -155,13 +155,17 @@ Init_head.prototype.addHeadListener = function(){
     })
   
     this.oShopingCart.addEventListener('click',() => {
-        location.href = 'html/shopingCart.html';
+        location.href = 'shoppingCart.html';
     })
     this.oSearch.addEventListener('click', () => {
-        location.href = 'html/seach.html'
+        // location.href = 'html/seach.html'
+        self.oInput.style.display = 'block';        
+    })
+    this.oSearch.addEventListener('dblclick', () => {
+         self.oInput.style.display = 'none';        
     })
     this.oUse.addEventListener('click',function() {
-        location.href = 'html/login.html';
+        location.href = 'login.html';
     })
     this.oShopingCart.addEventListener('mouseover',function() {
         // this.className='icon_hover';
@@ -189,11 +193,15 @@ Init_head.prototype.addHeadListener = function(){
         this.style.borderStyle = 'solid';
         this.style.borderColor = '#eee';
     })
+    var self = this;
+    // console.log(self);
+    // console.log(self.oInput);
     this.oSearch.addEventListener('mouseover',function() {
         // this.className='icon_hover';
         this.style.width = '42px';
         this.style.height = '42px';
         this.style.border = 'none';
+        // self.oInput.style.display = 'block';
     })
     this.oSearch.addEventListener('mouseleave',function() {
         this.style.width = '38px';
@@ -201,10 +209,16 @@ Init_head.prototype.addHeadListener = function(){
         this.style.borderWidth = '2px';
         this.style.borderStyle = 'solid';
         this.style.borderColor = '#eee';
+        // self.oInput.style.display = 'none';
+        
     })
     // this.oType.addEventListener('click',function(){
     //     console.log(this.dataset.cat_id);
     // })
-    
+    this.oInput.addEventListener('keydown', function(e){
+        if(e.keyCode == 13){
+
+        }
+    })
 }
 Init_footer.prototype.addFooterListener = function() {}
