@@ -1,0 +1,100 @@
+*{
+    border: 0;
+}
+body{
+    background: #CECACD;
+}
+#header{
+    width: 100%;
+    height: 150px;
+    margin-top:68px; 
+}
+#header>#header_logo{
+    width: 232px;
+    height: 130px;
+    margin: 10px 0 0 200px;
+    float: left
+}
+#header>#header_logo >#logo_img{
+    width: 160px;
+    height:138px;
+    float: left;
+}
+#header>#header_logo >p{
+    width: 72px;
+    height: 40px;
+    margin-top: 60px;
+    float: left;
+    font-size: 24px;
+}
+/* #header>#search{
+
+} */
+#title{
+    width: 1192px;
+    height: 114px;
+  
+    margin: 0 auto;
+}
+#title>#title_top{
+    width: 100%;
+    height: 55px;
+    border-bottom:2px solid #6D6C6C;
+    font-size: 18px;
+    line-height: 55px;
+}
+#title_buttom>#t_li1{
+    float: left;
+    margin-left: 192px; 
+}
+#title_buttom>#t_li2{
+    float: left;
+    margin-left: 414px;
+}
+#title_buttom>#t_li3{
+    float: left;
+    margin-left: 50px;
+}
+
+#title_buttom>#t_li4{
+    float: left;
+    margin-left: 80px;
+}
+#title_buttom>#t_li5{
+    float: left;
+    margin-left: 150px;
+}
+.sl{
+    width: 1192px;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid bisque;
+}
+#totalprices{
+  
+    width: 1192px;
+    height: 80px;
+    margin: 0 auto;
+    background: gray;
+}
+#totalprices>p{
+    width: 374px;
+    height: 80px;
+    float: right;
+    line-height: 80px;
+
+}
+#totalprices>p>#p1{
+    float: left;
+}
+#totalprices>p>#price{
+   float: left;
+   margin-left:30px; 
+}
+#totalprices>p>#submitorder{
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    float: right;
+    margin: 15px 52px 0 0;
+}
