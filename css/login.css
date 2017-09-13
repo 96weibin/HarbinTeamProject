@@ -47,6 +47,12 @@
     left: 123px;
     top: 68px;
 }
+#login> #login_body > #login_box > #hint_username{
+    position: absolute;
+    left: 172px;
+    top:130px;
+    display: none;
+}
 #login > #login_body > #login_box > #username >#img1{
     width: 50px;
     height: 60px;
@@ -68,6 +74,12 @@
     position: absolute;
     left: 123px;
     top: 156px;
+}
+#login> #login_body > #login_box > #hint_password{
+    position: absolute;
+    left: 172px;
+    top:220px;
+    display: none;
 }
 #login > #login_body > #login_box >#password>#img2{
     width: 50px;
