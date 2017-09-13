@@ -46,8 +46,13 @@ Init_head.prototype.crearHeadDom = function(){
             self.oType.innerText = arr[i].cat_name;
             self.oType.addEventListener('click', function() {
                 var oCatId = this.dataset['cat_id'];
-                localStorage.oCatId = oCatId;
-                location.href = 'html/search.html';                
+                location.href = 'search.html?' + 'cat_id='+ oCatId;
+                // localStorage.oCatId = oCatId;
+                // myajax.get('http://h6.duchengjiu.top/shop/api_goods.php',{'cat_id':oCatId},function(error, respond) {
+                //     var json = JSON.parse(respond);
+                //     console.log(json);
+                // });
+                             
             })
             self.oSelect.appendChild(self.oType);
         }
@@ -137,7 +142,7 @@ Init_footer.prototype.crearFooterDom = function() {
 }
 Init_head.prototype.addHeadListener = function(){
     this.oLogo.addEventListener('click',function(){
-        location.reload();
+        location.href ='index.html';
     })
     this.oLeft.addEventListener('mouseover', () => {
         this.oSelect.style.display='-webkit-flex';

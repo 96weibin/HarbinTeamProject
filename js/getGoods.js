@@ -1,13 +1,14 @@
-function HotGoods() {
-    this.createDom();
+function getGoods(url) {
+    this.createDom(url);
     this.addListener();
 }
-HotGoods.prototype.createDom = function() {
+getGoods.prototype.createDom = function(url) {
     this.oContent = document.createElement('div');
     this.oContent.className = 'content';
     document.body.appendChild(this.oContent);
     var self = this;
-    myajax.get('http://h6.duchengjiu.top/shop/api_goods.php',{},function(error, respond) {
+    console.log(url);
+    myajax.get(url,{},function(error, respond) {
         var json = JSON.parse(respond);
         var arr = json.data;
         console.log(json.data[0]);
@@ -41,7 +42,7 @@ HotGoods.prototype.createDom = function() {
         }
     })
 }
-HotGoods.prototype.addListener = function() {
+getGoods.prototype.addListener = function() {
     
 }
 
