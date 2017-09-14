@@ -1,7 +1,7 @@
 function Show(){
-    this.creatElement();
+    this.createShowElement();
 }
-Show.prototype.creatElement = function(){
+Show.prototype.createShowElement = function(){
 
     this.content = document.createElement('div');
     this.content.className = 'content';
@@ -11,6 +11,18 @@ Show.prototype.creatElement = function(){
     this.goods.className = 'goods';
     this.content.appendChild(this.goods);
 
+    this.oBox = document.createElement('div');
+    this.oBox.className = 'box';
+    this.goods.appendChild(this.oBox);
+
+    this.oShow = document.createElement('div');
+    this.oShow.className = 'show';
+
+
+    this.content.appendChild(this.oShow);
+
+    new Magnifier(this.goods,this.oBox,this.oShow);
+    
     this.goodsName = document.createElement('div');
     this.goodsName.className = 'goodsName';
     this.content.appendChild(this.goodsName);
@@ -33,6 +45,8 @@ Show.prototype.creatElement = function(){
             console.log(json);
             if(json.code === 0) {
                 alert('添加成功');
+            }else if(json.code === 1002){
+                alert('请你先登录');
             }
         })
     })
@@ -44,6 +58,13 @@ Show.prototype.creatElement = function(){
         self.message = JSON.parse(respond).data[0];
         console.log(self.message);
         self.goods.style.background = 'url(' + self.message.goods_thumb +')';
+        self.oShow.style.background = 'url(' + self.message.goods_thumb +')';
+
+
+        self.oShow.style.backgroundSize = '860px 860px';        
+        self.oShow.style.backgroundRepeat = 'no-repeat';
+        
+        self.goods.style.backgroundRepeat = 'no-repeat';
         self.goodsName.innerText = self.message.goods_name;
         self.goodsDesc.innerText = self.message.goods_desc;
         self.goodsPrice.innerText = '￥' + self.message.price;

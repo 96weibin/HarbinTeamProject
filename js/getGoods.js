@@ -27,6 +27,7 @@ getGoods.prototype.createDom = function() {
             self.goodsPic.style.backgroundPosition = 'center';
             self.goodsPic.style.backgroundSize = 'cover';
             self.goodsPic.className = 'goodsPic'
+            // self.goodsPic.setAttribute('data-url','url(' + arr[i].goods_thumb + ')')
 
 
             self.goodsName = document.createElement('div');

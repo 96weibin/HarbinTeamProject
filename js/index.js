@@ -167,9 +167,10 @@ Init_head.prototype.addHeadListener = function(){
     this.oSearch.addEventListener('dblclick', () => {
          self.oInput.style.display = 'none';        
     })
-    this.oUse.addEventListener('click',function() {
-        location.href = 'login.html';
-    })
+    this.oBlock = document.createElement('div');
+    this.oUse.appendChild(this.oBlock);
+    this.oBlock.className = 'oBlock';
+    
     this.oShopingCart.addEventListener('mouseover',function() {
         // this.className='icon_hover';
         this.style.width = '42px';
@@ -183,11 +184,34 @@ Init_head.prototype.addHeadListener = function(){
         this.style.borderStyle = 'solid';
         this.style.borderColor = '#eee';
     })
-    this.oUse.addEventListener('mouseover',function() {
+    this.oUse.addEventListener('mouseenter',function() {
         // this.className='icon_hover';
         this.style.width = '42px';
         this.style.height = '42px';
         this.style.border = 'none';
+        self.oBlock.style.display = 'block';
+        // console.log(localStorage.token);
+        if(localStorage.token){
+            //显示username ,点击跳转到购物车
+            self.oBlock.innerHTML = `<p>欢迎:${localStorage.username}</p><p class='logoff'>注销</p>`
+        }else{
+            self.oBlock.innerHTML = `<p>你还未登陆</p>
+                                <a href='login.html'><p>去登陆</p></a>
+                                `
+        }
+
+        self.oLogoff = document.querySelector('.logoff');
+        if(self.oLogoff){
+            self.oLogoff.addEventListener('click',function(){
+                localStorage.clear();
+                location.reload();
+            })
+        }
+        
+    })
+    
+    this.oBlock.addEventListener('mouseleave', function() {
+        self.oBlock.style.display = 'none';
     })
     this.oUse.addEventListener('mouseleave',function() {
         this.style.width = '38px';
@@ -195,6 +219,8 @@ Init_head.prototype.addHeadListener = function(){
         this.style.borderWidth = '2px';
         this.style.borderStyle = 'solid';
         this.style.borderColor = '#eee';
+        self.oBlock.style.display = 'none';
+        
     })
     var self = this;
     // console.log(self);

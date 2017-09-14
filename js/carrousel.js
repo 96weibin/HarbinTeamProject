@@ -1,3 +1,11 @@
+/**
+ * 轮播图组件
+ * @param opts        参数列表： 图片参数   图片跳转路径   轮播图延时
+ * @param targetId    目标盒子ID        必需
+ * @constructor
+ */
+//封装要实现每个函数功能的单一性
+//传递一个参数w，减少跨作用域查找
 (function (w) {
     //不变的内容放在构造函数外面
     //模板字符串
@@ -313,3 +321,71 @@
         w.Carousel = Carousel;
     }
 }(window));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function Carrousel() {
+//     this.getUrls();
+//     // this.createDom();    
+//     // this.start(this.urls);
+//     console.log(this.urls);
+// }
+// // Carrousel.prototype.createDom=function() {
+// //     this.wrapper = document.createElement('div');
+// //     this.wrapper.className = 'wrapper';
+// //     document.body.appendChild(this.wrapper);
+// //     this.wrapper.innerHTML =    `
+// //                                 <div class='containner'>
+// //                                     <ul>
+// //                                         <li><a href='#'><img></img></a></li>
+// //                                         <li><a href='#'><img></img></a></li>
+// //                                         <li><a href='#'><img></img></a></li>
+// //                                         <li><a href='#'><img></img></a></li>
+// //                                     </ul>
+// //                                 </div>  
+// //                                 `
+                    
+// //     this.oImgs = document.getElementsByTagName('img');
+// //     console.log(this.urls);
+// //     for(var i = 0; i < this.urls.length; i++) {
+// //         console.log(this.oImgs[i] + '-------' + this.urls[i]);
+// //         this.oImgs[i].setAttribute('src',this.urls[i]);
+// //     }   
+// // }
+
+// Carrousel.prototype.getUrls = function() {
+//     var self = this;
+//     myajax.get('http://h6.duchengjiu.top/shop/api_ad.php?position_id=1',{},function(error, respond) {
+//         var arr = JSON.parse(respond).data;
+//         var urls = [];
+//         for (var i = 0; i < arr.length; i++) {
+//             this.urls.push(arr[i].url);
+//             self.urls = this.urls;
+//         }    
+//     })
+//     console.log(this.urls)
+// }

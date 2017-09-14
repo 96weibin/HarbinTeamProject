@@ -6,7 +6,7 @@
     flex-wrap: wrap; 
 }
 .content .goods{
-    width: 220px;
+    width: 250px;
     height: 300px;
     background: #666;
     margin: 15px;
@@ -14,8 +14,10 @@
     position: relative;
 }
 .content .goods .goodsPic{
-    width: 220px;
+    width: 250px;
     height: 218px;    
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .content .goods .goodsName{
     font-size: 12px;
