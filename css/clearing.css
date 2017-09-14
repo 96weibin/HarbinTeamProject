@@ -1,0 +1,128 @@
+
+#clearing_address{
+    margin: 0 auto;
+    margin-top:100px ;
+    border-top:2px solid black;
+    width: 1192px;
+   height: 100%;
+}
+#clearing_address>#address_name{
+    width: 1192px;
+    height: 30px;
+    margin-bottom:20px; 
+    background: #D4D2D2;
+    font-size: 22px;
+}
+#clearing_address>#address_add{
+    width: 100px;
+    height: 25px;
+    margin: 20px 0 20px 900px;
+  
+}
+#shoppingList{
+    width: 1192px;
+    height: 100%;
+    border-top: 2px solid black;
+    margin: 0 auto;
+  
+}
+#shoppingList_d{
+    width: 1192px;
+    height: 30px;
+    margin-bottom:20px; 
+    background: #D4D2D2;
+    font-size: 22px;
+}
+#shoppingList_s{
+    width: 1192px;
+    height: 30px;
+    font-size: 16px;
+    border-bottom: 1px solid black;
+}
+#shoppingList_s> li{
+    float: left;
+}
+#shoppingList_s>#l1{
+    margin-left:114px; 
+}
+#shoppingList_s>#l2{
+    margin-left:542px; 
+}
+#shoppingList_s>#l3{
+    margin-left:108px; 
+}
+#shoppingList_s>#l4{
+    margin-left:140px; 
+}
+.tit_ul{
+    height: 150px;
+    margin: 25px 0 25px 0;
+    
+    line-height: 150px;
+    border: 1px solid black;
+}
+.tit_ul>li{
+    float: left;
+}
+.tit_ul>.tit_li1{
+  height: 100px;
+  line-height: 100px;
+  margin:20px 0 0 78px; 
+}
+.tit_ul>.tit_li1>img{
+  width: 100px;
+   height: 100px;
+  float: left;
+}
+.tit_ul>.tit_li1>p{
+    width: 440px;
+    height: 100px;
+    line-height: 100px;
+    float: left;
+    margin-left:10px; 
+}
+.tit_ul>.tit_li2{
+   
+    margin-left: 72px; 
+    
+  }
+.tit_ul>.tit_li3{
+  width: 72px;
+    margin-left: 122px; 
+    
+  }
+.tit_ul>.tit_li4{
+    width: 94px;
+      margin-left: 122px; 
+      
+    }
+#clearing_list{
+    width: 1192px;
+    height: 100%;
+    border-top: 2px solid black;
+    margin: 0 auto;
+}
+#clearing_list>#clearing_t{
+    width: 1192px;
+    height: 90px;
+    margin-bottom:20px; 
+    background: #D4D2D2;
+    line-height: 90px;
+    position: relative;
+}
+#clearing_list>#clearing_t>#z{
+    position: absolute;
+    left: 800px;
+}
+#clearing_list>#clearing_t>#j{
+    position: absolute;
+    left: 860px;
+}
+#clearing_list>#clearing_t>#ljgm{
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    left: 980px;
+    top: 20px;
+}
