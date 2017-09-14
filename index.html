@@ -9,15 +9,45 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/init.css">
     <link rel="stylesheet" href="css/getGoods.css">
-    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/carrousel.css">
 </head>
 <body>
     <script src="js/myajax.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/carousel.js"></script>
+    <script src="js/carrousel.js"></script>
     <script src="js/getGoods.js"></script>
+    <script src="js/carrousel.js"></script>
     <script>
         new Init_head();
+        // new Carrousel();
+        var oCarrousel = document.createElement('div');
+        oCarrousel.id = 'carrousel';
+        document.body.appendChild(oCarrousel);
+        window.onload = function() {
+            
+            //使用姿势：传入目标盒子ID和图片配置信息即可
+            //配置信息
+            var opts = {
+                //图片信息（必需）
+                imgData: [
+                {href: "#",src: "img/1.jpg"},
+                {href: "#",src: "img/2.jpg"},
+                {href: "#",src: "img/3.jpg"},
+                {href: "#",src: "img/4.jpg"},
+                {href: "#",src: "img/5.jpg"},
+                {href: "#",src: "img/6.jpg"},
+                {href: "#",src: "img/7.jpg"},
+                {href: "#",src: "img/8.jpg"},
+                
+                
+                
+            ],
+                time: 2000               //轮播图延时（可选）
+            };
+        
+            //实例化
+            new Carousel('carrousel',opts);
+        };
         new getGoods('http://h6.duchengjiu.top/shop/api_goods.php');
         new Init_footer();
     </script>
