@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" type="text/css" href="css/init.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/clearing.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="clearing_address">
+        <div id="address_name">收货地址</div>
+        <button id="address_add">添加收货地址</button>
+    </div>
+    <div id="shoppingList">
+      <div id="shoppingList_d">订单详情</div>
+      <ul id="shoppingList_s">
+          <li id="l1">商品</li>
+          <li id="l2">数量</li>
+          <li id="l3">单价(元)</li>
+          <li id="l4">小计(元)</li>
+      </ul>
+    </div>
+    <div id="clearing_list">
+        <div id="clearing_t">
+            <span id="z">总价:</span>
+            <span id="j">0</span>
+            <button id="ljgm">立即购买</button>
+        </div>
+    </div>
+</body>
+<script src='js/index.js'></script>
+<script src="js/myajax.js" charset="utf-8"></script>
+<script>
+    new Init_head();
+    
+    new Init_footer();
+     
+    var oShoppingList = document.querySelector("#shoppingList");
+    myajax.get("http://h6.duchengjiu.top/shop/api_cart.php",
+        {token: localStorage.token},
+        function(err,responseText){
+            var json = JSON.parse(responseText);
+            var data = json.data;
+            for (var i=0; i<data.length; i++){
+                var obj = data[i];
+                obj.goods_sum = obj.goods_price * obj.goods_number;  
+                oShoppingList.innerHTML +=`
+                    <ul class= tit_ul>
+                            <li class = tit_li1><img src="${obj.goods_thumb}"><p>${obj.goods_name}</p></li>
+                    <li class = tit_li2>${obj.goods_number}</li>
+                    <li class = tit_li3>${obj.goods_price}</li>
+                    <li class = tit_li4 name="sum">${obj.goods_sum}</li>
+                    </ul>
+                `
+                getSum();
+            }
+        }
+)
+    var oJ = document.querySelector("#j");
+    function getSum(){
+        var sum = document.querySelectorAll("li[name=sum]");
+        console.log(sum);
+        var sums = 0;
+        for(var i = 0; i<sum.length; i++){
+            sums += parseInt (sum[i].innerText.substr(0,5));
+            console.log(sum[i].innerText.substr(0,5));
+        }
+        localStorage.sum = sums;
+        oJ.innerHTML ="￥"+sums;
+    }
+</script>
+</html>

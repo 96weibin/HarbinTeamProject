@@ -66,7 +66,7 @@ body{
 }
 #title>#title_buttom>#t_li5{
     float: left;
-    margin-left: 150px;
+    margin-left: 140px;
 }
 .sl{
     width: 1192px;
@@ -91,7 +91,7 @@ body{
 #totalprices>p>#p1{
     float: left;
 }
-#totalprices>p>#price{
+#totalprices>p>#p2{
    float: left;
    margin-left:30px; 
 }
@@ -102,54 +102,73 @@ body{
     float: right;
     margin: 15px 52px 0 0;
 }
-#shoppingList{
+#tit{
     width: 1192px;
     height: 100%;
   
     margin: 0 auto;
 }
-#sl_s{
+.tit_ul{
     height: 150px;
-    margin-top: 50px;
+    margin: 25px 0 25px 0;
+    
     line-height: 150px;
     border: 1px solid black;
 }
-#sl_s>li{
+.tit_ul>li{
     float: left;
 }
-#sl_s>#sl_s_li1{
+.tit_ul>.tit_li1{
   height: 100px;
   line-height: 100px;
-  margin:20px 0 0 90px; 
+  margin:20px 0 0 78px; 
 }
-#sl_s>#sl_s_li1>img{
-  width: 100px; height: 100px;
+.tit_ul>.tit_li1>img{
+  width: 100px;
+   height: 100px;
   float: left;
 }
-#sl_s>#sl_s_li1>p{
-    width: 400px;
+.tit_ul>.tit_li1>p{
+    width: 440px;
     height: 100px;
     line-height: 100px;
     float: left;
     margin-left:10px; 
 }
-#sl_s>#sl_s_li2{
+.tit_ul>.tit_li2{
    
-    margin-left: 60px; 
+    margin-left: 26px; 
     
   }
-#sl_s>#sl_s_li3{
+.tit_ul>.tit_li3{
   width: 72px;
-    margin-left: 36px; 
+    margin-left: 68px; 
     
   }
-#sl_s>#sl_s_li4{
+.tit_ul>.tit_li4{
     width: 94px;
-      margin-left: 36px; 
+      margin-left: 70px; 
       
     }
-#sl_s>#sl_s_li5{
+.tit_ul>.tit_li5{
         
-          margin-left: 118px; 
-          
-        }
+          margin-left: 92px; 
+}
+.tit_ul>.tit_li6{
+    width: 25px;
+    height: 150px;
+    margin-left:25px; 
+}
+#checkbox{
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    margin-top: 65px; 
+    position: relative;
+}
+#checkbox>#checkbox_img{
+  position: absolute;
+  left: 0;
+  top: 0;
+    display: none;
+}
