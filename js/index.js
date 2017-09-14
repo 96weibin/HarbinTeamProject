@@ -10,6 +10,8 @@ Init_head.prototype.crearHeadDom = function(){
     this.oHead_nav = document.createElement('div');
     this.oHead_nav.className = 'head_nav'
     document.body.appendChild(this.oHead_nav);
+
+
     this.oSpace = document.createElement('div');
     this.oSpace.className = 'space';
     document.body.appendChild(this.oSpace);
@@ -46,7 +48,7 @@ Init_head.prototype.crearHeadDom = function(){
             self.oType.innerText = arr[i].cat_name;
             self.oType.addEventListener('click', function() {
                 var oCatId = this.dataset['cat_id'];
-                location.href = 'search.html?' + 'cat_id='+ oCatId;
+                location.href = 'goodslist.html?' + 'cat_id='+ oCatId;
                 // localStorage.oCatId = oCatId;
                 // myajax.get('http://h6.duchengjiu.top/shop/api_goods.php',{'cat_id':oCatId},function(error, respond) {
                 //     var json = JSON.parse(respond);
@@ -79,6 +81,7 @@ Init_head.prototype.crearHeadDom = function(){
 
     this.oInput = document.createElement('input');
     this.oInput.className = 'input';
+    this.oInput.setAttribute('placeholder','请输入您要搜索的内容Enter')
     this.oRight.appendChild(this.oInput);
 
     this.oSelect = document.createElement('div');
@@ -208,16 +211,14 @@ Init_head.prototype.addHeadListener = function(){
         this.style.height = '38px';
         this.style.borderWidth = '2px';
         this.style.borderStyle = 'solid';
-        this.style.borderColor = '#eee';
-        // self.oInput.style.display = 'none';
-        
+        this.style.borderColor = '#eee';        
     })
-    // this.oType.addEventListener('click',function(){
-    //     console.log(this.dataset.cat_id);
+    // document.addEventListener('click', function() {
+    //     self.oInput.style.display = 'none';        
     // })
     this.oInput.addEventListener('keydown', function(e){
         if(e.keyCode == 13){
-
+            location.href = 'search.html?search_text=' + self.oInput.value;
         }
     })
 }
