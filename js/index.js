@@ -211,16 +211,13 @@ Init_head.prototype.addHeadListener = function(){
         this.style.height = '38px';
         this.style.borderWidth = '2px';
         this.style.borderStyle = 'solid';
-        this.style.borderColor = '#eee';
-        // self.oInput.style.display = 'none';
-        
+        this.style.borderColor = '#eee';        
     })
-    // this.oType.addEventListener('click',function(){
-    //     console.log(this.dataset.cat_id);
+    // document.addEventListener('click', function() {
+    //     self.oInput.style.display = 'none';        
     // })
     this.oInput.addEventListener('keydown', function(e){
         if(e.keyCode == 13){
-            // console.log('click');
             location.href = 'search.html?search_text=' + self.oInput.value;
         }
     })
