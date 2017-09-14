@@ -28,7 +28,13 @@ Show.prototype.creatElement = function(){
     this.join.className = 'join';
     this.join.innerText = '加入购物车';
     this.join.addEventListener('click',function(){
-        location.href = 'shoppingCart.html?show.js/31'
+        myajax.post('http://h6.duchengjiu.top/shop/api_cart.php?token=' + localStorage.token,{'goods_id':getQueryString('goods_id'), 'number':1},function(error, respond){
+            var json = JSON.parse(respond);
+            console.log(json);
+            if(json.code === 0) {
+                alert('添加成功');
+            }
+        })
     })
     this.content.appendChild(this.join);
 
