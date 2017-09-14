@@ -77,8 +77,9 @@
                 oHintPassword.style.display = "none";}
            if(json.code===0){
                setTimeout("location.href='login.html'",2000);
+               clearTimeout();
            }
-          
+           
             console.log(json);
         }
     );

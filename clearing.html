@@ -12,9 +12,69 @@
 </head>
 <body>
     <div id="clearing_address">
+        <div id="c">
+            添加成功  
+        </div>
         <div id="address_name">收货地址</div>
         <button id="address_add">添加收货地址</button>
+        <div id="address_particulars">
+                <ul class = "address_particulars_p">
+                </ul>
+        </div>
+        <input type="submit" id="add_q" value="显示全部地址">
+        <input type="submit" id="add_y" value="隐藏地址">
     </div>
+    <div id="add_d_d">
+        <div id="add_g">
+            
+            <input type="submit" value="关闭" id="no_sub">
+            <p>添加地址</p>
+        </div>
+        <form id="add_d">
+            <br/>
+                <label class="la">
+                  地址名称: <input type="text" name="address_name" value="家">
+                </label><br/>
+                <label  class="la">
+                  收货人: <input type="text" name="consignee" value="maxwelldu">
+                </label><br/>
+                <label  class="la">
+                  国家: <input type="text" name="country" value="中国">
+                </label ><br/>
+                <label  class="la">
+                  省: <input type="text" name="province" value="北京">
+                </label><br/>
+                <label  class="la">
+                  市: <input type="text" name="city" value="北京">
+                </label><br/>
+                <label  class="la">
+                  区: <input type="text" name="district" value="石景山">
+                </label><br/>
+                <label  class="la">
+                  地址: <input type="text" name="address" value="实兴东街11号朗诚大厦南楼二层">
+                </label><br/>
+                <label  class="la">
+                  邮编: <input type="text" name="zip_code" value="100000">
+                </label><br/>
+                <label  class="la">
+                  手机号: <input type="text" name="mobile" value="18518368050">
+                </label><br/>
+                <label  class="la">
+                  邮箱: <input type="text" name="email" value="dcj3sjt@126.com">
+                </label><br/>
+                <label  class="la">
+                  电话: <input type="text" name="tel" value="010-91519281">
+                </label><br/>
+                <label  class="la">
+                  最佳送货时间: <input type="text" name="besttime" value="周一到周五">
+                </label><br/>
+                <label  class="la">
+                  标志物: <input type="text" name="sign_building" value="">
+                </label><br/>
+                <label class="la">
+                  <input type="button" value="添加" class="add">
+                </label >
+              </form></div>
     <div id="shoppingList">
       <div id="shoppingList_d">订单详情</div>
       <ul id="shoppingList_s">
@@ -34,11 +94,71 @@
 </body>
 <script src='js/index.js'></script>
 <script src="js/myajax.js" charset="utf-8"></script>
+<script src="js/modal.js" charset="utf-8"></script>
 <script>
     new Init_head();
     
     new Init_footer();
-     
+    var oAddressAdd = document.querySelector("#address_add");
+    var oAddD = document.querySelector("#add_d_d");
+    var oNoSub = document.querySelector("#no_sub");
+    var oAddresParticulars = document.querySelector(".address_particulars_p") ;
+   oAddressAdd.onclick = function (){
+       oAddD.style.display = "block";
+   }
+   oNoSub.onclick = function (){
+    oAddD.style.display = "none";
+   }
+
+   var oAdd = document.querySelector('.add');
+   var oC = document.querySelector("#c");
+   oAdd.onclick = function() {
+    var postobj = serializeForm(document.querySelector('form'));
+      console.log(postobj);
+      myajax.post('http://h6.duchengjiu.top/shop/api_useraddress.php?status=add&token='+localStorage.token, postobj, function(err, responseText){
+        var json = JSON.parse(responseText);
+        console.log(json);
+        if(json.code ===0){
+           oC.style.display ="block";
+            setTimeout("oAddD.style.display = 'none',oC.style.display ='none'"
+            
+            ,2000);
+             clearTimeout();
+             addressParticulars();
+        }
+      });
+    }
+    function addressParticulars (){
+        myajax.get('http://h6.duchengjiu.top/shop/api_useraddress.php',
+        {token: localStorage.token},
+        function(error, responseText) {
+            var json = JSON.parse(responseText);
+            var data = json.data;
+          
+            if (data.length === 0) {
+                oAddresParticulars.innerHTML = '<h2>您还没有收货地址，请点击添加收货地址</h2>';
+            return;
+          }
+          oAddresParticulars.innerHTML = '';
+          for (var i = data.length - 1; i >= 0; i--) {
+            var obj = data[i];
+            oAddresParticulars.innerHTML += `
+            
+                            <li id="ll" data-id="${obj.address_id}">
+                                
+                              <span class = "sh">收货人：${obj.consignee} <a name="delete" id="de" class="delete" data-id="${obj.address_id}" >删除</a></span><br/>
+                              
+                              <span>手机：${obj.mobile}</span><br/>
+                              <span>地址：${obj.address}</span>
+                            </li>
+                        
+            `;
+          }
+        }
+    )
+    }
+    addressParticulars();
+
     var oShoppingList = document.querySelector("#shoppingList");
     myajax.get("http://h6.duchengjiu.top/shop/api_cart.php",
         {token: localStorage.token},
@@ -60,6 +180,17 @@
             }
         }
 )
+var oShowAllAddress = document.querySelector('#add_q');
+        oShowAllAddress.onclick= function(){
+            
+            oAddresParticulars.style.overflow = "visible";
+            oAddresParticulars.style.height = "500px";
+        };
+var oAddy = document.querySelector("#add_y");
+        oAddy.onclick = function(){
+            oAddresParticulars.style.overflow = "hidden";
+            oAddresParticulars.style.height = "100px";
+        }
     var oJ = document.querySelector("#j");
     function getSum(){
         var sum = document.querySelectorAll("li[name=sum]");
@@ -72,5 +203,65 @@
         localStorage.sum = sums;
         oJ.innerHTML ="￥"+sums;
     }
+
+    var selected_address_id = 0;
+     
+      oAddresParticulars.onclick = function(event){
+        event = event || window.event;
+        var target = event.target || event.srcElement;
+        console.log(target.nodeName);
+        if (target.className === 'delete') {
+            console.log(target.className)
+          if (!confirm('确认要删除收货地址吗？')) {
+            return;
+          }
+         
+          var address_id = target.dataset.id;
+          console.log(address_id);
+          myajax.get('http://h6.duchengjiu.top/shop/api_useraddress.php',
+          {status: 'delete', address_id, token: localStorage.token}, function(error, responseText){
+            var json = JSON.parse(responseText);
+            if (json.code === 0) {
+
+               target.parentNode.parentNode.parentNode.removeChild(target.parentNode.parentNode);
+            }
+          })
+        } else {
+       
+          var oAddressLis = oAddresParticulars.querySelectorAll('li');
+          for (var i = 0; i < oAddressLis.length; i++) {
+            oAddressLis[i].classList.remove('selected');
+          }
+         
+          if (target.nodeName === 'LI') {
+           
+            selected_address_id = parseInt(target.dataset.id);
+            target.classList.add('selected');
+          } else if (target.nodeName === 'SPAN'){
+            selected_address_id = parseInt(target.parentNode.dataset.id);
+            target.parentNode.classList.add('selected');
+          }
+
+        }
+      }
+
+      var oOrder = document.querySelector('#ljgm');
+      oOrder.onclick = function() {
+        var address_id = selected_address_id;
+        if (address_id === 0) {
+          alert('请选择一个收货地址');
+          return;
+        }
+        var total_prices = localStorage.sum;
+        myajax.post('http://h6.duchengjiu.top/shop/api_order.php?token='+localStorage.token+'&status=add', {address_id, total_prices}, function(err, responseText){
+            var json = JSON.parse(responseText);
+            console.log(json);
+            if (json.code === 0) {
+              alert('下订单成功');
+            
+            }
+        });
+
+      }
 </script>
 </html>

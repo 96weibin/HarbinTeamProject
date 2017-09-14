@@ -131,9 +131,12 @@ body{
 .tit_ul>.tit_li1>p{
     width: 440px;
     height: 100px;
-    line-height: 100px;
+    line-height: 100px;s
     float: left;
     margin-left:10px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .tit_ul>.tit_li2{
    
