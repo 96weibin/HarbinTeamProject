@@ -5,6 +5,87 @@
     border-top:2px solid black;
     width: 1192px;
    height: 100%;
+   position: relative;
+}
+#clearing_address>#address_particulars{
+    margin-bottom: 50px;
+   
+ 
+
+}
+.selected {
+    border: 1px solid orange;
+}
+.address_particulars_p{
+    margin-top: 5px; 
+    margin-left: 5px; 
+    width: 1190px;
+    height: 100px;
+    overflow: hidden;
+   
+}
+.address_particulars_p> #ll{
+    margin: 5px 0 0 5px; 
+    width: 285px;
+    height: 85px;
+    border: 3px solid #ff4400;
+    border-radius: 5%;
+    float: left;
+
+}
+#clearing_address>#c{
+    position: absolute;
+    top: 275px;
+    left: 520px;
+    line-height: 50px;
+    text-align: center;
+    width: 120px;
+    height: 50px;
+    border-radius: 20%;
+    background: #ff4400;
+    font-size: 20px;
+    z-index: 999;
+    display: none;
+}
+#add_d_d{
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 1200px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#add_d_d> #add_g{
+    margin:120px 0 0 591px;
+    width: 400px;
+    height: 30px;
+    background: white;
+    border: 1px  solid #F78C00;
+}
+#add_d_d> #add_g>p{
+    float: right;
+    margin:2px 5px 0 0; 
+}
+#add_d_d> #add_g>input{
+    float: right;
+    margin:2px 5px 0 0; 
+}
+#add_d_d> #add_d{
+    margin:0 auto;
+    text-align: right;
+    width: 400px;
+    height: 492px;
+    background: white;
+    border: 1px solid #F78C00;
+    
+}
+
+
+#add_d_d> #add_d>.la>input{
+    margin: 10px 20px 0 36px; 
+  
 }
 #clearing_address>#address_name{
     width: 1192px;
@@ -15,8 +96,8 @@
 }
 #clearing_address>#address_add{
     width: 100px;
-    height: 25px;
-    margin: 20px 0 20px 900px;
+    height: 30px;
+    margin: 20px 0 20px 800px;
   
 }
 #shoppingList{
@@ -68,6 +149,9 @@
   height: 100px;
   line-height: 100px;
   margin:20px 0 0 78px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .tit_ul>.tit_li1>img{
   width: 100px;
@@ -125,4 +209,37 @@
     position: absolute;
     left: 980px;
     top: 20px;
+}
+.sh{
+    position: relative;
+}
+.delete{
+    width: 50px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 220px;
+    text-align: center;
+    background: #ff4400;
+}
+#add_q{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+
+    position: absolute;
+    left: 940px;
+    top: 70px;
+
+}
+#add_y{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+
+    position: absolute;
+    left: 1050px;
+    top: 70px;
+
 }
