@@ -6,7 +6,7 @@
     flex-wrap: wrap; 
 }
 .content .goods{
-    width: 250px;
+    width: 230px;
     height: 300px;
     background: #666;
     margin: 15px;
@@ -14,7 +14,7 @@
     position: relative;
 }
 .content .goods .goodsPic{
-    width: 250px;
+    width: 230px;
     height: 218px;    
     background-position: center;
     background-repeat: no-repeat;
