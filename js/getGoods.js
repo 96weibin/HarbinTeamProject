@@ -1,7 +1,7 @@
 function getGoods(url, data) {
     this.url = url;
     this.data = data;
-    console.log(this.data);
+    // console.log(this.data);
     this.createDom();
     this.addListener();
 }
@@ -10,12 +10,12 @@ getGoods.prototype.createDom = function() {
     this.oContent.className = 'content';
     document.body.appendChild(this.oContent);
     var self = this;
-    console.log(this.url);
+    // console.log(this.url);
     myajax.get(this.url,this.data,function(error, respond) {
         var json = JSON.parse(respond);
         var arr = json.data;
-        console.log(json);
-        console.log(json.data[0]);
+        // console.log(json);
+        // console.log(json.data[0]);
     
         for(var i = 0; i < arr.length; i++) {
     

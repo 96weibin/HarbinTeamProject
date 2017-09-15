@@ -7,6 +7,11 @@ function Init_footer() {
     this.addFooterListener();
 }
 Init_head.prototype.crearHeadDom = function(){
+    this.oIcon = document.createElement('link');
+    this.oIcon.setAttribute('rel','icon');
+    this.oIcon.setAttribute('href','logo.png');
+    document.head.appendChild(this.oIcon);
+
     this.oHead_nav = document.createElement('div');
     this.oHead_nav.className = 'head_nav'
     document.body.appendChild(this.oHead_nav);
