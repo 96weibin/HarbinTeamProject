@@ -198,7 +198,7 @@ Init_head.prototype.addHeadListener = function(){
         // console.log(localStorage.token);
         if(localStorage.token){
             //显示username ,点击跳转到购物车
-            self.oBlock.innerHTML = `<p>欢迎:${localStorage.username}</p><p class='logoff'>注销</p>`
+            self.oBlock.innerHTML = `<p>欢迎:${localStorage.username}</p><p class='logoff'>注销</p><p class='order'>查看订单</p>`
         }else{
             self.oBlock.innerHTML = `<p>你还未登陆</p>
                                 <a href='login.html'><p>去登陆</p></a>
@@ -210,6 +210,12 @@ Init_head.prototype.addHeadListener = function(){
             self.oLogoff.addEventListener('click',function(){
                 localStorage.clear();
                 location.reload();
+            })
+        }
+        self.oOrder = document.querySelector('.order');
+        if(self.oOrder){
+            self.oOrder.addEventListener('click', function() {
+                location.href='order.html';
             })
         }
         
