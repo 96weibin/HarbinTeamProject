@@ -1,3 +1,5 @@
 # HarbinTeamProject
 
-[浏览](http://47.95.8.174/pcshop/index.html)
+## 以停用
+
+- 前期使用后台数据已停止服务，故无法浏览
